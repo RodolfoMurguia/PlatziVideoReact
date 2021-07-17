@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 //importo componentes
-import Holamundo from './components/Holamundo'
+import App from './containers/App'
 
 //Generamos el renderer de react
-ReactDOM.render(<Holamundo/>, document.getElementById('app'))
+ReactDOM.render(<App/>, document.getElementById('app'))
