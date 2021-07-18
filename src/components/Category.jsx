@@ -8,10 +8,10 @@ import Search from '../components/Search'
 //Estilos
 import '../assets/styles/components/Category.scss'
 
-const Category = ({ children }) =>{
+const Category = ({ children, title }) =>{
     return(
         <div className="categories">
-            <h3 className="categories__title">Mi lista</h3>
+            <h3 className="categories__title">{title}</h3>
             {children}
         </div>
     )

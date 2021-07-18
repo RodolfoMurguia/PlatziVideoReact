@@ -1,7 +1,9 @@
+@import './Vars.scss';
+
 body {
     margin: 0;
-    font-family: 'Muli', sans-serif;
-    background: #8f57fd;
+    font-family: $Theme-Font;
+    background: $main-color
   }
   
   * {
@@ -11,3 +13,4 @@ body {
 ::-webkit-scrollbar {
 display: none;
 }
+

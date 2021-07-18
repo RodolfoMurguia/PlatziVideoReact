@@ -1,29 +1,40 @@
 //Librerias
 import React from 'react'
+import PropTypes from 'prop-types'
 
 //Componentes
-import Header from '../components/Header'
-import Search from '../components/Search'
+import Play from '../assets/static/play-icon.png'
+import Plus from '../assets/static/plus-icon.png'
 
 //Estilos
 import '../assets/styles/components/CarrouselItem.scss'
 
 // 
 
-const CarrouselItem = () =>{
+const CarrouselItem = ({ cover,title,year,contentRating, duration }) =>{
     return(
-        <div class="carousel-item">
-            <img class="carousel-item__img" src="https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&w=500" alt=""/>
-            <div class="carousel-item__details">
+        <div className="carousel-item">
+            <img className="carousel-item__img" src={cover} alt={title}/>
+            <div className="carousel-item__details">
                 <div>             
-                    <img class="carousel-item__details--img" src="../assets/play-icon.png" alt="Play Icon"/>
-                    <img class="carousel-item__details--img" src="../assets/plus-icon.png" alt="Plus Icon"/>
+                    <img className="carousel-item__details--img" src={Play} alt="Play Icon"/>
+                    <img className="carousel-item__details--img" src={Plus} alt="Plus Icon"/>
                 </div>
-                <p class="carousel-item__details--title">Título descriptivo</p>
-                <p class="carousel-item__details--subtitle">2019 16 + 114 minutos</p>
+                <p className="carousel-item__details--title">{title}</p>
+                <p className="carousel-item__details--subtitle">
+                    {`${year} ${contentRating} ${duration}`}
+                </p>
             </div>
          </div>
     )
+}
+
+CarrouselItem.propTypes = {
+    cover: PropTypes.string,
+    title: PropTypes.string,
+    year: PropTypes.number,
+    contentRating: PropTypes.string,
+    duration: PropTypes.number,
 }
 
 export default CarrouselItem;
